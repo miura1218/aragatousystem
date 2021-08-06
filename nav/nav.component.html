@@ -1,0 +1,49 @@
+<mat-toolbar color="primary" style="z-index: 1;"style="background-color:#6495ed;">
+  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <span style="margin-left:200px;font-weight:900;font-size:30px;font-family:sans-serif;">ありがとうシステム</span>
+
+  <span class="example-fill-remaining-space"></span>
+    <span style="font-size:70%">{{user}}</span>
+  <a class="no-links" href="javascript:void(0) " title="">
+    <i mat-button [matMenuTriggerFor]="menu" class="fa fa-user faa-horizontal animated-hover" aria-hidden="true" style="margin-left:2px;color: white;">
+
+      <i class="fa fa-caret-down " style="margin-left:2px;color: white;"></i></i></a>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logout()">ログアウト</button>
+    <!-- <button mat-menu-item (click)="settei()"><i class="fa fa-gear"></i> 設定</button> -->
+    
+    <!-- <button mat-menu-item>Item 1</button>
+<button mat-menu-item>Item 2</button>
+-->
+  </mat-menu>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar style="font-size:40px;background-color:#00ff7f;">Menu</mat-toolbar>
+    <mat-nav-list style="background-color:#00ff7f;">
+      <!-- <a mat-list-item [routerLink]="['/sss']" (click)="drawer_toggle_j(drawer)">sss</a> -->
+      <a mat-list-item [routerLink]="['/nav/arigato-okuru']" (click)="drawer_toggle_j(drawer)" style="font-weight:1000;font-size:20px;">ありがとうを送る</a>
+      <a mat-list-item [routerLink]="['/nav/user-tuika']" (click)="drawer_toggle_j(drawer)" style="font-weight:900;font-size:20px;">ありがとうを見る</a>
+      <a mat-list-item [routerLink]="['/nav/otoiawase']" (click)="drawer_toggle_j(drawer)" style="font-weight:900;font-size:20px;">
+        お問い合わせ
+      </a>
+      <a mat-list-item [routerLink]="['/aaa']" (click)="drawer_toggle_j(drawer)"></a>
+      <a mat-list-item [routerLink]="['/bbb']" (click)="drawer_toggle_j(drawer)"></a>
+      <a mat-list-item [routerLink]="['/ttt']" (click)="drawer_toggle_j(drawer)"></a>
+      <a mat-list-item [routerLink]="['/rrr']" (click)="drawer_toggle_j(drawer)"></a>
+      <a mat-list-item [routerLink]="['/tokui2']" (click)="drawer_toggle_j(drawer)"></a>
+       <a mat-list-item [routerLink]="['/aaa']" (click)="drawer_toggle_j(drawer)"></a>
+      <a mat-list-item [routerLink]="['/bbb']" (click)="drawer_toggle_j(drawer)"></a>
+      <a mat-list-item [routerLink]="['/ttt']" (click)="drawer_toggle_j(drawer)"></a>
+      <a mat-list-item [routerLink]="['/rrr']" (click)="drawer_toggle_j(drawer)"></a>
+      <a mat-list-item [routerLink]="['/tokui2']" (click)="drawer_toggle_j(drawer)"></a>
+      <!--  <a mat-list-item href="#">Link 4</a> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
