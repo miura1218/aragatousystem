@@ -1,0 +1,151 @@
+<!-- <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="start" fxLayoutGap="0px" style="margin-left:0px;" style="margin-top: 20px;">
+  <form fxFlex="90" #myForm [formGroup]="hedForm" novalidate>
+    <mat-card style="margin-left:40px;" style="background-color:#00bfff">
+      <div fxLayout="row wrap" fxLayoutGap="0px" style="margin-left:0px;" style="margin-top:10px;">
+        <h1>お問い合わせ</h1>
+        <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="center" style="margin-left:0px;" style="margin-top:10px;">
+          <mat-form-field fxFlex="40" class="example-full-width">
+            <mat-label>ユーザー名</mat-label>
+            <input matInput value="" formControlName="user">
+          </mat-form-field>
+          <mat-form-field fxFlex="40" class="example-full-width">
+            <mat-label>メールアドレス</mat-label>
+            <input matInput placeholder="" value="" formControlName="email">
+          </mat-form-field>
+          <div fxLayout="row wrap" fxFlex="100" fxLayoutGap="0px" fxLayoutAlign="center" fxFlex.xs="100" style="margin-left:0px;" style="margin-top:10px;">
+            <mat-form-field fxFlex="90" class="example-full-width">
+              <mat-label>お問い合わせ内容</mat-label>
+              <input matInput placeholder="" value="" formControlName="komento">
+            </mat-form-field>
+          </div>
+               <div>
+            <button mat-raised-button type="button" (click)='touroku()' color="primary" style="margin-top:10px;">
+              送信
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </form> -->
+<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center" fxLayoutGap="40px" style="border:solid 0px;padding:20px;">
+  
+  <h1 style="padding:25px ;font-weight:900;font-size:30px;">お問合せフォームより
+    お気軽にお問い合わせ下さい。</h1>
+
+  <div fxLayout="row wrap" fxFlex="100" fxFlex.xs="100" fxLayoutAlign="center" fxLayoutGap="40px" style="padding:100px;"
+   [class.mat-elevation-z4]="true" style="background-color:#87cefa;margin-top: 20px;">
+    <mat-form-field fxFlex="40">
+      <input matInput [(ngModel)]="toiawaseForm.user" required placeholder="ユーザー名">
+    </mat-form-field>
+    <mat-form-field fxFlex="40">
+      <input matInput [(ngModel)]="toiawaseForm.email" required placeholder="メールアドレス">
+    </mat-form-field>
+    <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center" fxLayoutGap="40px" style="margin-left:0px;" style="margin-top: 20px;">
+      <mat-form-field fxFlex="85">
+        <mat-label>お問い合わせ内容</mat-label>
+        <textarea fxFlex="100" matInput placeholder="" style="border:none" rows="10" maxlength="600" [(ngModel)]="toiawaseForm.komento"required>
+
+            </textarea>
+      </mat-form-field>
+    </div>
+    <div>
+    <button mat-raised-button type="submit" (click)='touroku()' color="primary"[disabled]=""style="background-color:#ff7f50;font-size:20px;margin-bottom:20px;">送信</button>
+    </div>
+  </div>
+</div>
+<!-- 
+
+<mat-card class="example-card" layout="row" layout-align="center center">
+  <mat-card-header>
+    <div class="login-box-header" layout="row" layout-align="center center">
+        <img src="https://image.ibb.co/hDqa3p/codershood.png">
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+            <input matInput placeholder="Username" [(ngModel)]="toiawaseForm.user" name="username" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+        <td><mat-form-field class="example-full-width">
+          <input matInput placeholder="Password" [(ngModel)]="toiawaseForm.email"type="password" name="password" required>
+        </mat-form-field></td>
+      </tr></table>
+    </form>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)='touroku()' color="primary">Login</button>
+  </mat-card-actions>
+</mat-card> -->
+<!-- <mat-form-field fxFlex="60" class="example-full-width">
+              <mat-label>スポンサー名</mat-label>
+              <input matInput placeholder="" value="" formControlName="suponsa_name">
+            </mat-form-field>
+            <mat-form-field fxFlex="20" class="example-full-width">
+              <mat-label>会場CD</mat-label>
+              <input matInput placeholder="" value="" formControlName="kaijyo_cd">
+            </mat-form-field>
+            <mat-form-field fxFlex="60" class="example-full-width">
+              <mat-label>会場名</mat-label>
+              <input matInput placeholder="" value="" formControlName="kaijyo_name">
+            </mat-form-field> -->
+<!--   [disabled]="hedForm.invalid" -->
+<!-- <div id=""></div>
+<section id="" class="s10">
+
+  <div class="b1">
+    <div class="b2">
+      <p class="t1">お電話もしくは<br class="sp">お問合せフォームより<br>
+        お気軽にお問い合わせ下さい。</p>
+      <img src="assets/soudan/1001_2.png" width="358" alt="">
+    </div>
+  </div>
+  </section> -->
+<!-- <form method="POST" action="mailto:tomokazu.wasaki@gmail.com">
+  <div class="Form">
+    <div class="Form-Item">
+      <p class="Form-Item-Label">
+        <span class="Form-Item-Label-Required">必須</span>ユーザー名
+      </p>
+      <input type="text" class="Form-Item-Input" placeholder="">
+    </div>
+    <div class="Form-Item">
+      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>電話番号</p>
+      <input type="text" class="Form-Item-Input" placeholder="例）000-0000-0000">
+    </div>
+    <div class="Form-Item">
+      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>メールアドレス</p>
+      <input type="email" class="Form-Item-Input" placeholder="例）example@gmail.com">
+    </div>
+    <div class="Form-Item">
+      <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>お問い合わせ内容</p>
+      <textarea class="Form-Item-Textarea"></textarea>
+
+  </div>
+    </div>
+   <input style="margin-top:5px;" type="submit" class="Form-Btn" value="送信する">
+  
+    
+</form> -->
+<!-- <form method="POST"
+      action="mailto:tomokazu.wasaki@gmail.com">
+<div>名前: <input type=text name="NAME" size=20></div>
+<div>感想: <input type="text" name="MSG" size=20></div>
+<input type="submit" value="  送信  ">
+<input type="reset"  value="  取消  ">
+</form> -->
+<!-- <form action="mailto:tomokazu.wasaki@gmail.com" method="post" enctype="text/plain">
+お名前<input type="text" name="namae"><br>
+メール <input type="text" name="mail">
+<p>
+メッセージ<br>
+<textarea cols="20" rows="3" name="mes"></textarea>
+</p>
+<input type="submit" value="送信！！" name="go">
+<input type="reset" value="書き直す"></form> -->

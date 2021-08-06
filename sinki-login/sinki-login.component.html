@@ -1,0 +1,49 @@
+<!-- <div fxLayout="row wrap" fxFlex="100" fxFlex.xs="100" fxLayoutAlign="start" fxLayoutGap="40px" style="border:solid 0px;padding:10px ;margin-left: 40px;">
+  <h2 style="border:solid 0px;padding:10px ;margin-left: 40px;">下記項目に入力して、登録してください</h2>
+  <div fxLayout="row wrap" fxFlex="100" fxFlex.xs="100" fxLayoutAlign="start" fxLayoutGap="40px" style="border:solid 0px;padding:10px ;margin-left: 40px;" [class.mat-elevation-z4]="true">
+    <mat-form-field fxFlex="20">
+      <input matInput [(ngModel)]="user_data.user" placeholder="表示名">
+    </mat-form-field>
+    <mat-form-field fxFlex="20">
+      <input matInput [(ngModel)]="user_data.passwd" placeholder="パスワード">
+    </mat-form-field>
+    <mat-form-field fxFlex="20">
+      <input matInput [(ngModel)]="user_data.mail" placeholder="メールアドレス">
+    </mat-form-field>
+    <div>
+      <button mat-raised-button type="submit" (click)='touroku()' [disabled]="" color="primary">登録</button>
+    </div>
+  </div>
+</div> -->
+<!-- <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center" fxLayoutGap="40px" style="border:solid 0px;padding:20px;">
+  <h1 style="padding:25px ;font-weight:900;font-size:30px;">下記項目に入力して、登録してください</h1>
+</div> -->
+
+<form fxFlex="90" #myForm [formGroup]="hed_form" novalidate>
+<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center" fxLayoutGap="40px" style="border:solid 0px;padding:20px;">
+  
+  
+  <h1 style="padding:25px ;font-weight:900;font-size:30px;">下記項目に入力して、登録してください</h1>
+
+  <div fxLayout="row wrap" fxFlex="100" fxFlex.xs="100" fxLayoutAlign="center" fxLayoutGap="40px" style="padding:100px;"
+   [class.mat-elevation-z4]="true" style="background-color:#87cefa;margin-top: 20px;">
+
+    <mat-form-field fxFlex="40">
+      <input matInput [(ngModel)]="user_data.user" required placeholder="ユーザー名"formControlName="user" >
+    </mat-form-field>
+    <mat-form-field fxFlex="40">
+      <input matInput [(ngModel)]="user_data.passwd" required placeholder="パスワード"formControlName="passwd">
+    </mat-form-field>
+    <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center" fxLayoutGap="40px" style="margin-left:0px;" style="margin-top: 20px;">
+      <mat-form-field fxFlex="40">
+         <input matInput [(ngModel)]="user_data.add" placeholder="メールアドレス"formControlName="add">
+      
+      </mat-form-field>
+    </div>
+    <div>
+    <button mat-raised-button type="submit" (click)='touroku()' color="primary"
+    [disabled]="hed_form.invalid" style="background-color:#ff7f50;font-size:20px;margin-bottom:20px;">登録</button>
+    </div>
+  </div>
+</div>
+</form>
