@@ -1,0 +1,65 @@
+<!-- <p>login works!</p> -->
+<div style="height:100vh ">
+  <div id="login_g" fxLayout="row wrap" style="height: 100vh" fxFlex="100" fxLayoutAlign="space-around center">
+    <div *ngIf="pass_wasu" fxFlex="50">
+      <mat-card fxFlex="100" style="background-color:#0076c3">
+        <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit(user.value,pass.value)">
+          <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-around" style="margin-top:15px;">
+            <mat-form-field style="color: white">
+              <mat-placeholder class="placeholder" style="color: white">ユーザー</mat-placeholder>
+              <input matInput #user [(ngModel)]="ng_user" (ngModelChange)="user_f($event)" formControlName="user">
+              <mat-error *ngIf="loginForm.controls['user'].hasError('required')">
+                <span style="color: white">User is <strong>required</strong></span>
+              </mat-error>
+            </mat-form-field>
+            <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-around" style="margin-top:15px;">
+              <mat-form-field>
+                <mat-placeholder class="placeholder" style="color: white">パスワード</mat-placeholder>
+                <input matInput #pass type="password" formControlName="passwd">
+                <mat-error *ngIf="loginForm.controls['passwd'].hasError('required')">
+                  <span style="color:white">Password is <strong>required</strong></span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-around" style="padding-bottom:15px;">
+              <span><a href="javascript:void(0)" style="text-decoration:none;color:inherit;" (click)="passwd_wasureru()"><span style="color:white">パスワードを、お忘れの場合</span></a></span>
+            </div>
+            <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-around" style="margin-top:15px;">
+              <button mat-raised-button type="submit" [disabled]="loginForm.invalid" style="background-color:#0046A1 "><span style="color:white">ログイン</span></button>
+            </div>
+            <div class="block-body"style="margin-top:5px;">
+              
+                 <button mat-raised-button type="submit" routerLink="/sinki-login" style="background-color:#0046A1 "><span style="color:white;">新規登録</span></button>
+              
+            </div>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+    <div *ngIf="!pass_wasu" fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-around center">
+      <mat-card fxFlex="50" style="background-color:#0076c3">
+        <form [formGroup]="loginForm2" novalidate>
+          <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-around" style="margin-top:15px;">
+            <mat-form-field fxFlex=80>
+              <mat-placeholder class="placeholder" style="color: white">メールアドレス入力してください</mat-placeholder>
+              <input matInput style="color:black" type="text" formControlName="mail">
+              <mat-error *ngIf="loginForm2.controls['mail'].hasError('required')">
+                <span>Password is <strong>required</strong></span>
+              </mat-error>
+            </mat-form-field>
+            <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-around" style="margin-top:15px;">
+              <button mat-raised-button type="button" style="background-color:#0046A1 " (click)="pass_reset()"><span style="color:white">パスワードリセット</span></button>
+              <button mat-raised-button type="button" style="background-color:#0046A1 " (click)="modoru()"><span style="color:white">戻る</span></button>
+            </div>
+            <div *ngIf="mail_send" fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-around" style="padding-top:20px ">
+              <div fxFlex="80" class="alert alert-info" role="alert">メール送信しました</div>
+            </div>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<!-- style="margin-left:450px;" -->
+
+
